@@ -70,18 +70,18 @@ public class InputData extends AppCompatActivity {
 
 
         //PEMANGGILAN METHOD
-        AddData();
+        tambahData();
     }
 
     //SCRIPT TAMBAH DATA DATABASE
-    private void AddData() {
+    private void tambahData() { //method untuk memasukkan data dalam database ketika tombol dipencet || Mengubah Method ini
         inputmasuk.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                            boolean isInseted = myDB.insertData(jenispemasukan.getText().toString(),
+                            boolean mengambilData = myDB.insertDataPemasukan(jenispemasukan.getText().toString(),
                                     jmlpemasukan.getText().toString(), tglpemasukan.getText().toString());
-                            if (isInseted = true)
+                            if (mengambilData = true)
                                 Toast.makeText(InputData.this, "INPUT BERHASIL", Toast.LENGTH_LONG).show();
                             else
                                 Toast.makeText(InputData.this, "INPUT GAGAL", Toast.LENGTH_LONG).show();

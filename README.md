@@ -1,2 +1,1 @@
-# Qeuangans
-Aplikasi Keuangan 
+# CodeProyek2

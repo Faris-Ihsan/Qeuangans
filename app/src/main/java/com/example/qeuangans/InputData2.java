@@ -12,13 +12,14 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.util.Calendar;
 
 
 public class InputData2 extends AppCompatActivity {
-
+    DatabaseHelper database;
     EditText jenispengeluaran, jmlpengeluaran;
     TextView tglpengeluaran;
     Button inputkeluar;
@@ -28,6 +29,8 @@ public class InputData2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_data2);
+
+        database = new DatabaseHelper(this);
 
         Calendar calendar = Calendar.getInstance();
         String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
@@ -60,6 +63,23 @@ public class InputData2 extends AppCompatActivity {
             }
         };
         //AKHIR KALENDER
+
+        //Pemanggilan Method
+        tambahData();
+    }
+
+    private void tambahData() { //penambahan method tambahData()
+        inputkeluar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean mengambilData = database.insertDataPengeluaran(jenispengeluaran.getText().toString(),
+                        jmlpengeluaran.getText().toString(), tglpengeluaran.getText().toString());
+                if (mengambilData = true)
+                    Toast.makeText(InputData2.this, "Input Berhasil", Toast.LENGTH_LONG).show();
+                else
+                    Toast.makeText(InputData2.this, "Input Data Gagal", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     public void pemasukan(View view) {

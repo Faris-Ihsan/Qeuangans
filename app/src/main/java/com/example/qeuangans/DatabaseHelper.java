@@ -14,7 +14,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL3 = "PEMASUKAN";
     public static final String COL4 = "JENIS_PENGELUARAN";
     public static final String COL5 = "PENGELUARAN";
-    public static final String COL6 = "TANGGAL";
+    public static final String COL6 = "TANGGAL_PEMASUKAN";
+    public static final String COL7 = "TANGGAL_PENGELUARAN"; //MENAMBAHKAN PERINTAH SQL
 
 
     public DatabaseHelper(Context context) {
@@ -24,7 +25,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table "+ TBLNAME +"(ID INTEGER PRIMARY KEY AUTOINCREMENT, JENIS_PEMASUKAN STRING," +
-                "PEMASUKAN NUMBER, JENIS_PENGELUARAN STRING, PENGELUARAN NUMBER, TANGGAL STRING)");
+                "PEMASUKAN NUMBER, JENIS_PENGELUARAN STRING, PENGELUARAN NUMBER, " +
+                "TANGGAL_PEMASUKAN STRING, TANGGAL_PENGELUARAN STRING)"); //MENAMBAHKAN PERINTAH SQL
     }
 
     @Override
@@ -33,13 +35,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    //UNTUK INPUT DATA
-    public boolean insertData(String jenis_pemasukan, String pemasukan, String tanggal){
+    //UNTUK INPUT DATA PEMASUKAN
+    public boolean insertDataPemasukan(String jenis_pemasukan, String pemasukan, String tanggal_pemasukan){ //mengubah method ini
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL2, jenis_pemasukan);
         contentValues.put(COL3, pemasukan);
-        contentValues.put(COL6, tanggal);
+        contentValues.put(COL6, tanggal_pemasukan);
+
+        long result = db.insert(TBLNAME, null, contentValues);
+
+        if (result == -1)
+            return false;
+        else
+            return true;
+    }
+
+    //UNTUK INPUT DATA PENGELUARAN
+    public boolean insertDataPengeluaran(String jenis_pengeluaran, String pengeluaran, String tanggal_pengeluaran){ //menambahkan method ini
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL4, jenis_pengeluaran);
+        contentValues.put(COL5, pengeluaran);
+        contentValues.put(COL7, tanggal_pengeluaran);
 
         long result = db.insert(TBLNAME, null, contentValues);
 
