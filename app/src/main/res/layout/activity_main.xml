@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="15dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="18dp"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/Tabungan_anda" /> <!-- Hardcoded String: Issues #1 -->
+    <!--Penyelesaian Tag Start Is Not Closed: Issues #2 -->
+
+    <TextView
+        android:id="@+id/textsaldo"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="58dp"
+        android:hint="@string/Rp00"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:onClick="Notiftest"/>
+
+    <Button
+        android:id="@+id/tombolinputkeluar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="347dp"
+        android:gravity="bottom|center"
+        android:onClick="Pindah"
+        android:text="@string/input_data" />
+
+    <Button
+        android:id="@+id/List"
+        android:layout_width="384dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="399dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:onClick="list"
+        android:text="@string/List" />
+
+    <Button
+        android:id="@+id/tombolLaporan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/List"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="197dp"
+        android:onClick="Laporan"
+        android:text="Laporan" />
+
+</RelativeLayout>

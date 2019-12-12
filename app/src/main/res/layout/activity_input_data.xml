@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="15dp"
+    tools:context=".InputData">
+
+    <EditText
+        android:id="@+id/jenispemasukan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="27dp"
+        android:ems="10"
+        android:hint="Pemasukan"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/jmlpemasukan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="81dp"
+        android:ems="10"
+        android:hint="Jumlah"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/tglpemasukan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="134dp"
+        android:text="Masukkan Tanggal"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/inputmasuk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="169dp"
+        android:text="Submit" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="-1dp"
+        android:layout_marginEnd="191dp"
+        android:layout_marginRight="191dp"
+        android:text="Pengeluaran"
+        android:onClick="pengeluaran"
+        android:textColor="#B4B4B4" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="287dp"
+        android:layout_marginRight="287dp"
+        android:text="Pemasukan"
+        android:textColor="#000000" />
+
+</RelativeLayout>

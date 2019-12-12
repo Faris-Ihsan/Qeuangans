@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Qeuangans</string>
+    <string name="input_data">Input Data</string>
+    <string name="Tabungan_anda">Tabungan Anda</string> <!-- Hardcoded String: Issues #1-->
+    <string name="Rp00">Rp. 0,00</string>
+    <string name="List">List</string>
+</resources>

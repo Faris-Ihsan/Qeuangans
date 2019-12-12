@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/label"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="10sp"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    tools:context=".laporan">
+
+    <TextView
+        android:id="@+id/TombolLaporankeluar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="18dp"
+        android:text="Laporan Pengeluaran"
+        app:layout_constraintBottom_toTopOf="@+id/listLaporanK"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/listLaporanK"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TombolLaporankeluar" />
+    <!-- // Solusi ERROR 14. Issues #16 (android:id="@+id/listLaporanK")  -->
+    <!-- // Solusi ERROR 15. Issues #17 (app:layout_constraintBottom_toBottomOf="parent") // -->
+</androidx.constraintlayout.widget.ConstraintLayout>
